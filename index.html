@@ -79,7 +79,7 @@
   <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
     <a href="#topo" class="flex items-center gap-3" aria-label="Cássia Diaz Estética — início">
       <span class="logo-mark" aria-hidden="true"></span>
-      <span class="brand font-display text-[1.35rem] leading-none">Cássia Diaz <em class="italic">Estética</em></span>
+      <span class="brand whitespace-nowrap font-display text-[1.2rem] leading-none min-[420px]:text-[1.35rem]">Cássia Diaz <em class="italic">Estética</em></span>
     </a>
 
     <nav class="hidden items-center gap-9 text-[13px] font-semibold lg:flex" aria-label="Principal">
@@ -90,9 +90,9 @@
     </nav>
 
     <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
-       target="_blank" rel="noopener" class="btn btn-gold !px-5 !py-2.5 !text-[13px]">
+       target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp" class="btn btn-gold !px-4 !py-2.5 !text-[13px] min-[360px]:!px-5">
       <svg class="h-4 w-4"><use href="#i-wa"/></svg>
-      <span class="hidden sm:inline">Agendar</span><span class="sm:hidden">WhatsApp</span>
+      <span class="hidden sm:inline">Agendar</span><span class="hidden min-[360px]:inline sm:hidden">WhatsApp</span>
     </a>
   </div>
 </header>
@@ -316,14 +316,14 @@
         </picture>
       </div>
       <!-- Foto da Cássia: original com só 136x150 px úteis -> 64 px (sem ampliar). PRECISA de foto nova da cliente (celular moderno, foto nativa). -->
-      <div class="absolute -bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap rounded-2xl bg-ivory py-2.5 pl-2.5 pr-6 shadow-xl shadow-cocoa-900/15 ring-1 ring-cocoa-900/5">
+      <div class="absolute -bottom-6 left-1/2 flex w-max max-w-[calc(100%-1rem)] -translate-x-1/2 items-center gap-3 rounded-2xl bg-ivory py-2.5 pl-2.5 pr-5 shadow-xl shadow-cocoa-900/15 ring-1 ring-cocoa-900/5">
         <picture class="flex-none">
           <source type="image/webp" srcset="assets/img/fundadora-136.webp">
           <img src="assets/img/fundadora-136.png" alt="Cássia Diaz, fundadora" width="64" height="64" loading="lazy" decoding="async"
-               class="h-16 w-16 rounded-full object-cover object-top ring-2 ring-gold-500">
+               class="h-14 w-14 rounded-full object-cover object-top ring-2 ring-gold-500 sm:h-16 sm:w-16">
         </picture>
-        <div>
-          <p class="font-display text-2xl leading-none">Cássia Diaz</p>
+        <div class="min-w-0">
+          <p class="font-display text-[1.4rem] leading-none sm:text-2xl">Cássia Diaz</p>
           <p class="mt-1 text-[11px] font-bold uppercase tracking-widest2 text-rose-600">Fundadora</p>
         </div>
       </div>
