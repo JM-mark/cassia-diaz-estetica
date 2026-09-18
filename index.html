@@ -6,7 +6,9 @@
 <title>Cássia Diaz Estética | Clínica de Estética em Indaiatuba - SP</title>
 <meta name="description" content="Clínica Estética Cássia Diaz em Indaiatuba - SP. Nota 5,0 no Google com 169 avaliações. Limpeza de pele, drenagem linfática, massagem relaxante e modeladora, pós-operatório e skin care. Agende pelo WhatsApp.">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1B1014">
 <link rel="canonical" href="https://cassiadiazestetica.com.br/">
+<script>document.documentElement.classList.add('js')</script>
 
 <!--
   MAPA DE URLs ANTIGAS -> NOVAS ÂNCORAS (para a equipe técnica configurar redirects 301
@@ -33,628 +35,488 @@
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Preconnects -->
+<!-- Fontes: Instrument Serif (títulos / destaque itálico) + Manrope (corpo e headline bold) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- LCP: foto do hero (desktop paisagem / mobile retrato) -->
+<link rel="preload" as="image" type="image/webp" media="(min-width:768px)" imagesrcset="assets/img/hero-bg-1024.webp 1024w, assets/img/hero-bg-1550.webp 1550w" imagesizes="100vw">
+<link rel="preload" as="image" type="image/webp" media="(max-width:767px)" imagesrcset="assets/img/hero-bg-m-640.webp 640w, assets/img/hero-bg-m-900.webp 900w, assets/img/hero-bg-m-1200.webp 1200w" imagesizes="100vw">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%237A5C52'/%3E%3Ctext x='20' y='27' font-family='Georgia, serif' font-weight='600' font-size='18' fill='%23E9C9A6' text-anchor='middle'%3ECD%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%232A1A1F'/%3E%3Ctext x='20' y='27' font-family='Georgia, serif' font-style='italic' font-size='19' fill='%23D8BC84' text-anchor='middle'%3ECD%3C/text%3E%3C/svg%3E">
 
-<!-- Tailwind (CDN) -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          blush: {
-            50:  '#fdf6f2',
-            100: '#f9e8de',
-            200: '#f0cdb8',
-            300: '#e3ab8d',
-            400: '#d18a68',
-            500: '#bd6f4d',
-            600: '#9c5a3d',
-            700: '#7a4630',
-            800: '#5c3524',
-            900: '#3c231a',
-          },
-          gold: {
-            300: '#e9d6a8',
-            400: '#dbbc7c',
-            500: '#c6a15c',
-            600: '#a37f3f',
-          },
-          ink: '#2c2320',
-        },
-        fontFamily: {
-          serif: ['"Cormorant Garamond"', 'serif'],
-          sans: ['"Jost"', 'sans-serif'],
-        },
-      },
-    },
-  };
-</script>
-
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Jost', sans-serif; background-color: #fdf9f5; color: #2c2320; }
-  h1, h2, h3, .font-display { font-family: 'Cormorant Garamond', serif; }
-  .text-balance { text-wrap: balance; }
-  ::selection { background-color: #e3ab8d; color: #3c231a; }
-
-  /* Header shrink on scroll */
-  #site-header { transition: padding .35s ease, background-color .35s ease, box-shadow .35s ease; }
-  #site-header > div { transition: padding .35s ease; }
-  #site-header.scrolled { box-shadow: 0 6px 24px -8px rgba(60,35,26,.18); }
-  #site-header.scrolled > div { padding-top: .55rem; padding-bottom: .55rem; }
-
-  /* WhatsApp pulse */
-  .whatsapp-pulse { animation: pulse-wa 2.6s infinite; }
-  @keyframes pulse-wa {
-    0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-    70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-  }
-
-  .star::before { content: "★"; }
-
-  /* Scroll reveal (só esconde se o JS estiver ativo: classe .js no <html>) */
-  .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
-  .js .reveal.in { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1.in { transition-delay: .08s; }
-  .reveal-delay-2.in { transition-delay: .16s; }
-  .reveal-delay-3.in { transition-delay: .24s; }
-  .reveal-delay-4.in { transition-delay: .32s; }
-
-  /* Testimonial slider */
-  .testi-track { display: flex; transition: transform .6s cubic-bezier(.65,0,.35,1); }
-  .testi-slide { flex: 0 0 100%; }
-  @media (min-width: 768px) {
-    .testi-slide { flex: 0 0 50%; }
-  }
-
-  .logo-mark {
-    width: 46px; height: 46px; border-radius: 9999px; overflow: hidden;
-    background: #eaf3ee url('assets/img/logo-mark-92.png') center / cover no-repeat;
-    background-image: image-set(url('assets/img/logo-mark-92.webp') type('image/webp'), url('assets/img/logo-mark-92.png') type('image/png'));
-    flex: none;
-  }
-
-  /* Reduced motion: kill all animation/transition-based motion, show content immediately */
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-    .whatsapp-pulse { animation: none !important; }
-    .testi-track { transition: none !important; }
-    #site-header { transition: none !important; }
-    * { scroll-behavior: auto !important; }
-  }
-</style>
-<script>document.documentElement.classList.add('js')</script>
+<!-- CSS compilado (Tailwind) — fonte em src/input.css + tailwind.config.js -->
+<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body class="antialiased">
+<body>
+
+<!-- ============ SPRITE DE ÍCONES (ícones próprios de cada tratamento + utilitários) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="currentColor" d="M12.001 2C6.478 2 2 6.477 2 12c0 1.98.578 3.822 1.573 5.373L2 22l4.735-1.545A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.001a8.964 8.964 0 01-4.573-1.246l-.328-.195-2.812.918.925-2.737-.213-.34A8.965 8.965 0 013 12c0-4.963 4.038-9 9.001-9C16.963 3 21 7.037 21 12s-4.037 9.001-8.999 9.001z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l3.5 2"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38 12.035 12.035 0 01-7.143-7.143 1.125 1.125 0 01.38-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></symbol>
+
+    <!-- Ícones de tratamento (linha fina, desenhados sob medida) -->
+    <symbol id="s-limpeza" viewBox="0 0 48 48"><path d="M22 8l2.4 9.6L34 20l-9.6 2.4L22 32l-2.4-9.6L10 20l9.6-2.4z"/><path d="M37 7v8M33 11h8"/><path d="M35 30c3 4 5 6.5 5 9a5 5 0 01-10 0c0-2.5 2-5 5-9z"/></symbol>
+    <symbol id="s-skin" viewBox="0 0 48 48"><rect x="14" y="16" width="20" height="8" rx="2.5"/><path d="M15.5 24h17v13a3 3 0 01-3 3h-11a3 3 0 01-3-3z"/><path d="M39 8v7M35.5 11.5h7M9 13v5M6.5 15.5h5"/></symbol>
+    <symbol id="s-relaxante" viewBox="0 0 48 48"><path d="M24 9c5.5 5 6.5 13 0 22-6.5-9-5.5-17 0-22z"/><path d="M24 31c-8.5 1.5-14-2.5-16-11 7.5-1 13 2.5 16 11z"/><path d="M24 31c8.5 1.5 14-2.5 16-11-7.5-1-13 2.5-16 11z"/><path d="M12 39h24"/></symbol>
+    <symbol id="s-drenagem" viewBox="0 0 48 48"><path d="M24 7c7.5 9.5 12 15 12 20.5a12 12 0 01-24 0C12 22 16.500 16.500 24 7z"/><path d="M17 29c2.500-2.500 4.500-2.500 7 0s4.500 2.500 7 0"/></symbol>
+    <symbol id="s-modeladora" viewBox="0 0 48 48"><path d="M16 7c0 9 7 11 7 17s-7 8-7 17"/><path d="M32 7c0 9-7 11-7 17s7 8 7 17"/><path d="M13 7h6M29 7h6M13 41h6M29 41h6"/></symbol>
+    <symbol id="s-pos" viewBox="0 0 48 48"><path d="M24 40S9 31.500 9 20.500A8.500 8.500 0 0124 15.300 8.500 8.500 0 0139 20.500C39 31.500 24 40 24 40z"/><path d="M24 20v10M19 25h10"/></symbol>
+    <symbol id="s-pedras" viewBox="0 0 48 48"><ellipse cx="24" cy="36" rx="14" ry="5.500"/><ellipse cx="24" cy="27" rx="10.500" ry="4.500"/><ellipse cx="24" cy="19.500" rx="7" ry="3.500"/><path d="M20 12c-2-2.500 2-3.500 0-6M28 12c-2-2.500 2-3.500 0-6"/></symbol>
+    <symbol id="s-spa" viewBox="0 0 48 48"><path d="M24 41V15"/><path d="M24 24c-7.500 0-11-4.500-11-10 6.500 0 11 3.500 11 10z"/><path d="M24 32c7.500 0 11-4.500 11-10-6.500 0-11 3.500-11 10z"/><path d="M24 17c0-4.500 2-7 5.500-8 0 4.500-2 7-5.500 8z"/></symbol>
+  </defs>
+</svg>
 
 <!-- ================= HEADER ================= -->
-<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-[#fdf9f5]/95 backdrop-blur border-b border-blush-200/60">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-    <a href="#topo" class="flex items-center gap-3">
+<header id="site-header" class="fixed inset-x-0 top-0 z-50">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+    <a href="#topo" class="flex items-center gap-3" aria-label="Cássia Diaz Estética — início">
       <span class="logo-mark" aria-hidden="true"></span>
-      <span class="font-display text-lg font-semibold leading-tight text-ink sm:text-xl">
-        Cássia Diaz <span class="text-blush-600">Estética</span>
-      </span>
+      <span class="brand font-display text-[1.35rem] leading-none">Cássia Diaz <em class="italic">Estética</em></span>
     </a>
 
-    <nav class="hidden items-center gap-7 text-sm text-ink/70 lg:flex">
-      <a href="#servicos" class="transition hover:text-blush-600">Tratamentos</a>
-      <a href="#sobre" class="transition hover:text-blush-600">Sobre</a>
-      <a href="#depoimentos" class="transition hover:text-blush-600">Depoimentos</a>
-      <a href="#localizacao" class="transition hover:text-blush-600">Localização</a>
+    <nav class="hidden items-center gap-9 text-[13px] font-semibold lg:flex" aria-label="Principal">
+      <a href="#servicos" class="nav-link">Tratamentos</a>
+      <a href="#sobre" class="nav-link">Sobre</a>
+      <a href="#depoimentos" class="nav-link">Depoimentos</a>
+      <a href="#localizacao" class="nav-link">Localização</a>
     </nav>
 
     <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
-       target="_blank" rel="noopener"
-       class="hidden items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:brightness-95 sm:inline-flex">
-      (19) 99523-9638
+       target="_blank" rel="noopener" class="btn btn-gold !px-5 !py-2.5 !text-[13px]">
+      <svg class="h-4 w-4"><use href="#i-wa"/></svg>
+      <span class="hidden sm:inline">Agendar</span><span class="sm:hidden">WhatsApp</span>
     </a>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section id="topo" class="relative overflow-hidden bg-gradient-to-b from-blush-100 via-[#fdf9f5] to-[#fdf9f5] pt-28">
-  <div class="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-blush-200/50 blur-3xl"></div>
-  <div class="pointer-events-none absolute top-52 -left-24 h-72 w-72 rounded-full bg-gold-300/30 blur-3xl"></div>
+<main>
+<!-- ================= HERO CINEMATOGRÁFICO ================= -->
+<section id="topo" class="relative isolate overflow-hidden bg-cocoa-950 text-ivory">
+  <!-- Foto do ambiente REAL da clínica (original 1916x2560). Desktop: faixa 1550x900 (nativa); mobile: retrato 1400x2560 (nativo). Nunca ampliada. -->
+  <div class="absolute inset-0 -z-20 mx-auto max-w-[1550px] min-[1560px]:[mask-image:linear-gradient(to_right,transparent,#000_7%,#000_93%,transparent)]">
+    <picture>
+      <source media="(min-width:768px)" type="image/webp"
+              srcset="assets/img/hero-bg-1024.webp 1024w, assets/img/hero-bg-1550.webp 1550w" sizes="100vw">
+      <source type="image/webp"
+              srcset="assets/img/hero-bg-m-640.webp 640w, assets/img/hero-bg-m-900.webp 900w, assets/img/hero-bg-m-1200.webp 1200w" sizes="100vw">
+      <img src="assets/img/hero-bg-m-900.jpg" alt="Sala de atendimento da Clínica Estética Cássia Diaz, em Indaiatuba"
+           width="1550" height="900" decoding="async" fetchpriority="high"
+           class="hero-bg h-full w-full object-cover object-[50%_60%] md:object-[35%_50%]">
+    </picture>
+  </div>
+  <!-- Véus de leitura: mobile (de baixo p/ cima) e desktop (da esquerda p/ direita) -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-cocoa-950 via-cocoa-950/70 to-cocoa-950/35 md:hidden"></div>
+  <div class="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,rgba(27,16,20,.94)_0%,rgba(27,16,20,.78)_36%,rgba(27,16,20,.32)_72%,rgba(27,16,20,.18)_100%)] md:block"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-cocoa-950/80 to-transparent"></div>
 
-  <div class="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-5 pb-16 pt-6 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:pb-24 lg:pt-10">
-    <div class="reveal order-2 text-center lg:order-1 lg:text-left">
-      <div class="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-ink shadow-sm ring-1 ring-blush-200">
-        <span class="flex text-gold-500 tracking-tight">
-          <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-        </span>
-        <!-- Contadores: o HTML já traz o valor FINAL real (5,0 / 169). O JS só anima a partir de 0 quando o
-             elemento está visível — se o JS falhar, a aba estiver em segundo plano ou o usuário preferir
-             menos movimento, o valor correto continua na tela (nunca "0"). -->
-        <span><span class="js-count font-semibold text-ink" data-target="5" data-decimal="1">5,0</span> · <span class="js-count" data-target="169">169</span> avaliações no Google</span>
-      </div>
-
-      <h1 class="font-display text-balance text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-[3.4rem]">
-        Renove sua pele e sua autoestima em um espaço feito para o seu <span class="italic text-blush-600">bem-estar</span>.
-      </h1>
-
-      <p class="mx-auto mt-5 max-w-md text-base text-ink/70 sm:text-lg lg:mx-0">
-        Clínica de estética em Indaiatuba especializada em limpeza de pele, drenagem linfática,
-        massagens e cuidados pós-operatórios — com atendimento humanizado, sob medida para você.
+  <div class="mx-auto flex min-h-[100svh] max-w-6xl items-end px-5 pb-12 pt-32 sm:px-8 md:min-h-[min(100svh,900px)] md:items-center md:pb-20">
+    <div class="max-w-2xl">
+      <p class="rise mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest2 text-gold-400" style="--i:0">
+        <span class="h-px w-10 bg-gold-500"></span>Clínica de estética · Indaiatuba
       </p>
 
-      <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+      <h1 class="font-sans text-[2.7rem] font-extrabold leading-[1.03] tracking-tight sm:text-6xl lg:text-[4.4rem]">
+        <span class="line"><span style="--i:1">Renove sua pele,</span></span>
+        <span class="line"><span style="--i:2">reencontre seu</span></span>
+        <span class="line"><span style="--i:3"><em class="font-serif text-[1.18em] font-normal italic tracking-normal text-gold-400">bem-estar</em>.</span></span>
+      </h1>
+
+      <p class="rise mt-7 max-w-md text-base leading-relaxed text-ivory/80 sm:text-lg" style="--i:4">
+        Limpeza de pele, drenagem linfática, massagens e pós-operatório com atendimento humanizado
+        e sob medida — no coração de Indaiatuba.
+      </p>
+
+      <div class="rise mt-9 flex flex-col gap-3 sm:flex-row" style="--i:5">
         <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
-           target="_blank" rel="noopener"
-           class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-green-900/10 transition hover:-translate-y-0.5 hover:brightness-95 sm:w-auto">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.98.578 3.822 1.573 5.373L2 22l4.735-1.545A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.001a8.964 8.964 0 01-4.573-1.246l-.328-.195-2.812.918.925-2.737-.213-.34A8.965 8.965 0 013 12c0-4.963 4.038-9 9.001-9C16.963 3 21 7.037 21 12s-4.037 9.001-8.999 9.001z"/></svg>
-          Agendar no WhatsApp
+           target="_blank" rel="noopener" class="btn btn-gold !px-8 !py-4 !text-[15px]">
+          <svg class="h-5 w-5"><use href="#i-wa"/></svg> Agendar minha avaliação
         </a>
-        <a href="#servicos"
-           class="inline-flex w-full items-center justify-center rounded-full border border-ink/15 px-8 py-4 text-base font-medium text-ink transition hover:bg-ink/5 sm:w-auto">
-          Ver tratamentos
-        </a>
+        <a href="#servicos" class="btn btn-ghost-light !px-8 !py-4 !text-[15px]">Conhecer tratamentos</a>
       </div>
 
-      <p class="mt-5 text-sm text-ink/50">Ed. Vértice · R. Pedro Gonçalves, 1400 - Centro, Indaiatuba - SP</p>
-    </div>
-
-    <div class="reveal reveal-delay-1 order-1 flex justify-center lg:order-2">
-      <div class="relative w-64 sm:w-80 lg:w-96">
-        <div class="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-br from-gold-300 via-blush-300 to-blush-500 opacity-70 blur-xl"></div>
-        <!-- Foto do spa da própria clínica (original 1080x1350, exibida no máx. 384px = nunca ampliada). -->
-        <div class="relative aspect-[4/5] w-full overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-black/5">
-          <picture>
-            <source type="image/webp"
-                    srcset="assets/img/hero-spa-480.webp 480w, assets/img/hero-spa-768.webp 768w, assets/img/hero-spa-1080.webp 1080w"
-                    sizes="(min-width:1024px) 384px, (min-width:640px) 320px, 256px">
-            <img src="assets/img/hero-spa-768.jpg"
-                 alt="Mãe e filha relaxando com máscaras faciais no spa da Clínica Cássia Diaz, em Indaiatuba"
-                 width="768" height="960" decoding="async"
-                 class="h-full w-full object-cover"
-                 loading="eager" fetchpriority="high">
-          </picture>
-        </div>
-        <!-- Foto da Cássia: arquivo original só tem 136x150px úteis (recorte limpo). Exibida em 56px
-             para NÃO ser ampliada. Trocar por foto nova em melhor resolução quando a cliente enviar. -->
-        <div class="absolute -bottom-5 left-1/2 flex w-[88%] -translate-x-1/2 items-center gap-3 rounded-2xl bg-white/90 px-4 py-3 text-left shadow-lg ring-1 ring-black/5 backdrop-blur">
-          <picture class="flex-none">
-            <source type="image/webp" srcset="assets/img/fundadora-136.webp">
-            <img src="assets/img/fundadora-136.png" alt="Cássia Diaz, fundadora da clínica"
-                 width="56" height="56" decoding="async"
-                 class="h-14 w-14 rounded-full object-cover object-top ring-2 ring-white shadow">
-          </picture>
-          <div class="min-w-0">
-            <p class="font-display text-base font-semibold leading-tight text-ink sm:text-lg">"Não troco ela por ninguém."</p>
-            <p class="mt-0.5 text-xs text-ink/50">Cássia Diaz · avaliação real no Google</p>
-          </div>
+      <!-- Prova social. Contadores: o HTML já traz o valor FINAL real (5,0 / 169); o JS só anima a partir de 0
+           quando visível e um temporizador de segurança garante o valor final (nunca fica em "0"). -->
+      <div class="rise mt-10 inline-flex items-center gap-4 rounded-2xl border border-ivory/15 bg-ivory/10 py-2.5 pl-2.5 pr-5 backdrop-blur-md" style="--i:6">
+        <!-- Foto da Cássia: original só tem 136x150 px úteis -> exibida em 44 px (sem ampliar). Trocar quando houver foto nova. -->
+        <picture class="flex-none">
+          <source type="image/webp" srcset="assets/img/fundadora-136.webp">
+          <img src="assets/img/fundadora-136.png" alt="Cássia Diaz, fundadora" width="44" height="44" decoding="async"
+               class="h-11 w-11 rounded-full object-cover object-top ring-2 ring-gold-500/70">
+        </picture>
+        <div class="leading-tight">
+          <p class="flex items-center gap-2 text-sm">
+            <span class="flex text-gold-400"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></span>
+            <span class="font-extrabold"><span class="js-count" data-target="5" data-decimal="1" data-delay="1000">5,0</span></span>
+          </p>
+          <p class="mt-0.5 text-xs text-ivory/70"><span class="js-count font-bold text-ivory" data-target="169" data-delay="1000">169</span> avaliações no Google</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVIÇOS ================= -->
-<section id="servicos" class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-  <div class="reveal mx-auto max-w-xl text-center">
-    <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blush-600">Tratamentos</span>
-    <h2 class="font-display mt-2 text-3xl font-semibold text-ink sm:text-4xl">Protocolos pensados para a sua necessidade</h2>
-    <p class="mt-3 text-ink/60">Do rosto ao corpo, cada procedimento é personalizado por Cássia Diaz — nada de fórmula pronta.</p>
+<!-- ================= FAIXA DE TRATAMENTOS ================= -->
+<div class="overflow-hidden border-y border-gold-600/30 bg-cocoa-950 py-4" aria-hidden="true">
+  <div class="marquee-track font-display text-2xl italic text-gold-300">
+    <div class="flex shrink-0 items-center gap-8 pr-8"><span>Limpeza de pele</span><span class="text-gold-600">✦</span><span>Drenagem linfática</span><span class="text-gold-600">✦</span><span>Massagem relaxante</span><span class="text-gold-600">✦</span><span>Massagem modeladora</span><span class="text-gold-600">✦</span><span>Pós-operatório</span><span class="text-gold-600">✦</span><span>Skin care personalizado</span><span class="text-gold-600">✦</span><span>Pedras quentes</span><span class="text-gold-600">✦</span><span>Spa</span><span class="text-gold-600">✦</span></div>
+    <div class="flex shrink-0 items-center gap-8 pr-8"><span>Limpeza de pele</span><span class="text-gold-600">✦</span><span>Drenagem linfática</span><span class="text-gold-600">✦</span><span>Massagem relaxante</span><span class="text-gold-600">✦</span><span>Massagem modeladora</span><span class="text-gold-600">✦</span><span>Pós-operatório</span><span class="text-gold-600">✦</span><span>Skin care personalizado</span><span class="text-gold-600">✦</span><span>Pedras quentes</span><span class="text-gold-600">✦</span><span>Spa</span><span class="text-gold-600">✦</span></div>
+  </div>
+</div>
+
+<!-- ================= TRATAMENTOS ================= -->
+<section id="servicos" class="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
+  <div class="grid gap-8 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+    <div class="reveal">
+      <p class="eyebrow">Tratamentos</p>
+      <h2 class="mt-4 text-[2.6rem] leading-[1.05] sm:text-6xl">Cuidados <em class="text-rose-600">sob medida</em>, do rosto ao corpo.</h2>
+    </div>
+    <p class="reveal max-w-md text-cocoa-900/65 lg:justify-self-end" style="--d:120ms">
+      Cada protocolo é desenhado pela Cássia para a sua necessidade — sem fórmula pronta. Escolha um tratamento e fale direto no WhatsApp.
+    </p>
   </div>
 
-  <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
-    <a id="limpeza-de-pele" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Limpeza%20de%20Pele." target="_blank" rel="noopener"
-       class="reveal group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="h-[200px] w-[200px] overflow-hidden rounded-full ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300">
-        <picture>
-          <source type="image/webp" srcset="assets/img/limpeza-de-pele-220.webp 220w, assets/img/limpeza-de-pele-440.webp 440w" sizes="200px">
-          <img src="assets/img/limpeza-de-pele-440.jpg" alt="Limpeza de pele facial na Clínica Cássia Diaz" width="440" height="440" loading="lazy" decoding="async"
-               class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
-        </picture>
-      </div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Limpeza de Pele</h3>
-      <p class="mt-2 text-sm text-ink/60">Extração profunda de cravos e impurezas com esfoliação e hidratação para uma pele renovada.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:0ms">
+      <a id="limpeza-de-pele" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Limpeza%20de%20Pele." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-photo" aria-hidden="true"><img src="assets/img/limpeza-de-pele-440.webp" alt="" width="440" height="440" loading="lazy" decoding="async"></span>
+        <span class="svc-shade" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-limpeza"/></svg></span>
+          <span class="svc-num font-display text-3xl">01</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Limpeza de Pele</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">Extração profunda de cravos e impurezas com esfoliação e hidratação para uma pele renovada.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
-    <a id="massagem-relaxante" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Massagem%20Relaxante." target="_blank" rel="noopener"
-       class="reveal reveal-delay-1 group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="h-[200px] w-[200px] overflow-hidden rounded-full ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300">
-        <picture>
-          <source type="image/webp" srcset="assets/img/massagem-relaxante-220.webp 220w, assets/img/massagem-relaxante-440.webp 440w" sizes="200px">
-          <img src="assets/img/massagem-relaxante-440.jpg" alt="Massagem relaxante nas costas na Clínica Cássia Diaz" width="440" height="440" loading="lazy" decoding="async"
-               class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
-        </picture>
-      </div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Massagem Relaxante</h3>
-      <p class="mt-2 text-sm text-ink/60">Alívio para o estresse e a tensão muscular, com técnicas suaves para o seu momento de puro descanso.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:80ms">
+      <a id="skin-care" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Skin%20Care%20Personalizado." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-shade !from-cocoa-900 !via-cocoa-800 !to-rose-600" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-skin"/></svg></span>
+          <span class="svc-num font-display text-3xl">02</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Skin Care Personalizado</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">Protocolo de cuidados faciais sob medida para o seu tipo de pele, pensado para durar entre uma sessão e outra.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
-    <a id="drenagem-linfatica" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Drenagem%20Linf%C3%A1tica." target="_blank" rel="noopener"
-       class="reveal reveal-delay-2 group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="h-[200px] w-[200px] overflow-hidden rounded-full ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300">
-        <picture>
-          <source type="image/webp" srcset="assets/img/drenagem-linfatica-220.webp 220w, assets/img/drenagem-linfatica-440.webp 440w" sizes="200px">
-          <img src="assets/img/drenagem-linfatica-440.jpg" alt="Drenagem linfática na Clínica Cássia Diaz" width="440" height="440" loading="lazy" decoding="async"
-               class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
-        </picture>
-      </div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Drenagem Linfática</h3>
-      <p class="mt-2 text-sm text-ink/60">Ativa a circulação, reduz medidas e edemas e traz a sensação de leveza que o corpo precisa.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:160ms">
+      <a id="massagem-relaxante" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Massagem%20Relaxante." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-photo" aria-hidden="true"><img src="assets/img/massagem-relaxante-440.webp" alt="" width="440" height="440" loading="lazy" decoding="async"></span>
+        <span class="svc-shade" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-relaxante"/></svg></span>
+          <span class="svc-num font-display text-3xl">03</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Massagem Relaxante</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">Alívio para o estresse e a tensão muscular, com técnicas suaves para o seu momento de puro descanso.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
-    <a id="massagem-modeladora" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Massagem%20Modeladora." target="_blank" rel="noopener"
-       class="reveal group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="h-[200px] w-[200px] overflow-hidden rounded-full ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300">
-        <picture>
-          <source type="image/webp" srcset="assets/img/massagem-modeladora-220.webp 220w, assets/img/massagem-modeladora-440.webp 440w" sizes="200px">
-          <img src="assets/img/massagem-modeladora-440.jpg" alt="Massagem modeladora na Clínica Cássia Diaz" width="440" height="440" loading="lazy" decoding="async"
-               class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
-        </picture>
-      </div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Massagem Modeladora</h3>
-      <p class="mt-2 text-sm text-ink/60">Trabalha a redução de medidas e o combate à celulite com manobras firmes e resultado visível.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:240ms">
+      <a id="drenagem-linfatica" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Drenagem%20Linf%C3%A1tica." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-photo" aria-hidden="true"><img src="assets/img/drenagem-linfatica-440.webp" alt="" width="440" height="440" loading="lazy" decoding="async"></span>
+        <span class="svc-shade" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-drenagem"/></svg></span>
+          <span class="svc-num font-display text-3xl">04</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Drenagem Linfática</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">Ativa a circulação, reduz medidas e edemas e traz a sensação de leveza que o corpo precisa.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
-    <a id="pos-operatorio" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20um%20acompanhamento%20de%20P%C3%B3s-operat%C3%B3rio." target="_blank" rel="noopener"
-       class="reveal reveal-delay-1 group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="h-[200px] w-[200px] overflow-hidden rounded-full ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300">
-        <picture>
-          <source type="image/webp" srcset="assets/img/pos-operatorio-220.webp 220w, assets/img/pos-operatorio-440.webp 440w" sizes="200px">
-          <img src="assets/img/pos-operatorio-440.jpg" alt="Acompanhamento pós-operatório na Clínica Cássia Diaz" width="440" height="440" loading="lazy" decoding="async"
-               class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
-        </picture>
-      </div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Pós-Operatório</h3>
-      <p class="mt-2 text-sm text-ink/60">Cuidado especializado para recuperação segura, prevenindo fibrose e favorecendo a boa cicatrização.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:0ms">
+      <a id="massagem-modeladora" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Massagem%20Modeladora." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-photo" aria-hidden="true"><img src="assets/img/massagem-modeladora-440.webp" alt="" width="440" height="440" loading="lazy" decoding="async"></span>
+        <span class="svc-shade" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-modeladora"/></svg></span>
+          <span class="svc-num font-display text-3xl">05</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Massagem Modeladora</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">Trabalha a redução de medidas e o combate à celulite com manobras firmes e resultado visível.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
-    <a id="massagem-pedras-quentes" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Massagem%20com%20Pedras%20Quentes." target="_blank" rel="noopener"
-       class="reveal reveal-delay-2 group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="h-[200px] w-[200px] overflow-hidden rounded-full ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300">
-        <picture>
-          <source type="image/webp" srcset="assets/img/massagem-pedras-quentes-220.webp 220w, assets/img/massagem-pedras-quentes-440.webp 440w" sizes="200px">
-          <img src="assets/img/massagem-pedras-quentes-440.jpg" alt="Massagem com pedras quentes na Clínica Cássia Diaz" width="440" height="440" loading="lazy" decoding="async"
-               class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
-        </picture>
-      </div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Massagem com Pedras Quentes</h3>
-      <p class="mt-2 text-sm text-ink/60">O calor das pedras vulcânicas potencializa o relaxamento muscular e a sensação de bem-estar.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:80ms">
+      <a id="pos-operatorio" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20um%20acompanhamento%20de%20P%C3%B3s-operat%C3%B3rio." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-photo" aria-hidden="true"><img src="assets/img/pos-operatorio-440.webp" alt="" width="440" height="440" loading="lazy" decoding="async"></span>
+        <span class="svc-shade" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-pos"/></svg></span>
+          <span class="svc-num font-display text-3xl">06</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Pós-Operatório</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">Cuidado especializado para recuperação segura, prevenindo fibrose e favorecendo a boa cicatrização.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
-    <a id="skin-care" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Skin%20Care%20Personalizado." target="_blank" rel="noopener"
-       class="reveal group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="flex h-[200px] w-[200px] items-center justify-center rounded-full bg-gradient-to-br from-blush-100 to-gold-300/40 ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300"><svg class="h-16 w-16 text-blush-500" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg></div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Skin Care Personalizado</h3>
-      <p class="mt-2 text-sm text-ink/60">Protocolo de cuidados faciais sob medida para o seu tipo de pele, pensado para durar entre uma sessão e outra.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:160ms">
+      <a id="massagem-pedras-quentes" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Massagem%20com%20Pedras%20Quentes." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-photo" aria-hidden="true"><img src="assets/img/massagem-pedras-quentes-440.webp" alt="" width="440" height="440" loading="lazy" decoding="async"></span>
+        <span class="svc-shade" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-pedras"/></svg></span>
+          <span class="svc-num font-display text-3xl">07</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Massagem com Pedras Quentes</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">O calor das pedras vulcânicas potencializa o relaxamento muscular e a sensação de bem-estar.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
-    <a id="spa" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Spa%20em%20Indaiatuba." target="_blank" rel="noopener"
-       class="reveal reveal-delay-1 group flex flex-col items-center rounded-2xl border border-blush-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div class="h-[200px] w-[200px] overflow-hidden rounded-full ring-4 ring-blush-100 transition duration-500 group-hover:ring-gold-300">
-        <picture>
-          <source type="image/webp" srcset="assets/img/spa-220.webp 220w, assets/img/spa-440.webp 440w" sizes="200px">
-          <img src="assets/img/spa-440.jpg" alt="Spa em Indaiatuba: mãe e filha com máscaras faciais" width="440" height="440" loading="lazy" decoding="async"
-               class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
-        </picture>
-      </div>
-      <h3 class="font-display mt-6 text-xl font-semibold text-ink">Spa em Indaiatuba</h3>
-      <p class="mt-2 text-sm text-ink/60">Um momento a dois ou em família — presenteie quem você ama com um dia inteiro de autocuidado.</p>
-      <p class="mt-4 text-sm font-semibold text-blush-600">Agendar no WhatsApp →</p>
-    </a>
+    <div class="reveal" style="--d:240ms">
+      <a id="spa" href="https://wa.me/5519995239638?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Spa%20em%20Indaiatuba." target="_blank" rel="noopener" class="svc-card h-full">
+        <span class="svc-photo" aria-hidden="true"><img src="assets/img/spa-440.webp" alt="" width="440" height="440" loading="lazy" decoding="async"></span>
+        <span class="svc-shade" aria-hidden="true"></span>
+        <div class="flex items-start justify-between">
+          <span class="svc-icon"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#s-spa"/></svg></span>
+          <span class="svc-num font-display text-3xl">08</span>
+        </div>
+        <h3 class="svc-title mt-9 text-[1.75rem] leading-tight">Spa em Indaiatuba</h3>
+        <p class="svc-text mt-3 text-sm leading-relaxed">Um momento a dois ou em família — presenteie quem você ama com um dia inteiro de autocuidado.</p>
+        <span class="svc-cta mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold">Agendar <span class="svc-arrow">→</span></span>
+      </a>
+    </div>
 
   </div>
 </section>
 
-<!-- ================= SOBRE / DIFERENCIAIS ================= -->
-<section id="sobre" class="bg-blush-50/60 py-20">
-  <div class="mx-auto max-w-6xl px-5 sm:px-8">
-    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-      <div class="reveal order-2 lg:order-1">
-        <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blush-600">Quem cuida de você</span>
-        <h2 class="font-display mt-2 text-3xl font-semibold text-ink sm:text-4xl">Cássia Diaz</h2>
-        <p class="mt-5 text-ink/70 leading-relaxed">
-          Aqui na Cássia Diaz Estética, eu uno a minha experiência com um atendimento verdadeiramente
-          humanizado para cuidar da autoestima das pessoas em Indaiatuba e região. Preparei meu espaço
-          para oferecer o máximo de conforto e tranquilidade, com foco total no seu bem-estar desde o
-          momento em que você passa pela porta.
-        </p>
-        <p class="mt-4 text-ink/70 leading-relaxed">
-          Ofereço protocolos estéticos e terapêuticos pensados sob medida para a sua necessidade — desde
-          procedimentos faciais focados na vitalidade do rosto, como a limpeza de pele profunda e o skin
-          care personalizado, até os cuidados corporais mais essenciais, como drenagem linfática, massagem
-          relaxante, modeladora e acompanhamento pós-operatório.
-        </p>
+<!-- ================= SOBRE ================= -->
+<section id="sobre" class="bg-rose-50 py-24 md:py-32">
+  <div class="mx-auto grid max-w-6xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-2 lg:gap-24">
 
-        <!-- PENDENTE (confirmar com a Cássia antes de exibir): "Anos de experiência".
-             O site atual é inconsistente — diz "mais de 7 anos" no topo e "mais de 5 anos" no rodapé.
-             Não inventar número. Quando confirmado, reativar o bloco abaixo (e trocar grid-cols-2 por grid-cols-3):
-             <div class="px-2 text-center">
-               <p class="font-display ..."><span class="js-count" data-target="ANOS">ANOS</span>+</p>
-               <p class="...">Anos de experiência</p>
-             </div>
-        -->
-        <div class="mt-10 grid grid-cols-2 divide-x divide-blush-200 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-blush-100">
-          <div class="px-2 text-center">
-            <p class="font-display text-3xl font-semibold text-blush-600 sm:text-4xl"><span class="js-count" data-target="5" data-decimal="1">5,0</span></p>
-            <p class="mt-1 text-[11px] uppercase tracking-wide text-ink/50">Nota no Google</p>
-          </div>
-          <div class="px-2 text-center">
-            <p class="font-display text-3xl font-semibold text-blush-600 sm:text-4xl"><span class="js-count" data-target="169">169</span></p>
-            <p class="mt-1 text-[11px] uppercase tracking-wide text-ink/50">Avaliações</p>
-          </div>
-        </div>
-
-        <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
-           target="_blank" rel="noopener"
-           class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition hover:brightness-95">
-          Agendar minha avaliação
-        </a>
+    <div class="reveal relative mx-auto w-full max-w-[440px]">
+      <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-b-[36px] rounded-t-[999px] border border-gold-500/60" aria-hidden="true"></div>
+      <!-- Ambiente REAL da clínica (original 1550x1937; exibido no máx. 440 px = nunca ampliado) -->
+      <div class="relative aspect-[4/5] overflow-hidden rounded-b-[36px] rounded-t-[999px] shadow-2xl shadow-cocoa-900/20">
+        <picture>
+          <source type="image/webp"
+                  srcset="assets/img/clinica-ambiente-480.webp 480w, assets/img/clinica-ambiente-768.webp 768w, assets/img/clinica-ambiente-1080.webp 1080w"
+                  sizes="(min-width:1024px) 440px, 92vw">
+          <img src="assets/img/clinica-ambiente-768.jpg" alt="Sala de atendimento da Clínica Estética Cássia Diaz, em Indaiatuba"
+               width="768" height="960" loading="lazy" decoding="async" class="h-full w-full object-cover">
+        </picture>
       </div>
-
-      <div class="reveal reveal-delay-1 order-1 flex justify-center lg:order-2">
-        <div class="grid grid-cols-2 gap-4">
-          <!-- Ambiente REAL da clínica (foto original 1550x1937 recortada; exibida no máx. ~490px, nunca ampliada) -->
-          <div class="relative col-span-2 aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5">
-            <picture>
-              <source type="image/webp"
-                      srcset="assets/img/clinica-ambiente-480.webp 480w, assets/img/clinica-ambiente-768.webp 768w, assets/img/clinica-ambiente-1080.webp 1080w"
-                      sizes="(min-width:1024px) 490px, (min-width:640px) 480px, 92vw">
-              <img src="assets/img/clinica-ambiente-768.jpg"
-                   alt="Sala de atendimento da Clínica Estética Cássia Diaz, em Indaiatuba"
-                   width="768" height="960" loading="lazy" decoding="async"
-                   class="h-full w-full object-cover">
-            </picture>
-            <!-- Foto da Cássia: original com só 136x150px úteis -> exibida em 72px (não ampliada).
-                 PRECISA de foto nova da cliente (celular moderno, foto nativa) para ganhar destaque maior. -->
-            <div class="absolute bottom-3 left-3 flex items-center gap-3 rounded-2xl bg-white/90 py-2 pl-2 pr-4 shadow-lg ring-1 ring-black/5 backdrop-blur">
-              <picture class="flex-none">
-                <source type="image/webp" srcset="assets/img/fundadora-136.webp">
-                <img src="assets/img/fundadora-136.png" alt="Cássia Diaz, fundadora da clínica" width="72" height="72" loading="lazy" decoding="async"
-                     class="h-[72px] w-[72px] rounded-full object-cover object-top ring-2 ring-white shadow">
-              </picture>
-              <div>
-                <p class="font-display text-lg font-semibold leading-tight text-ink">Cássia Diaz</p>
-                <p class="text-xs text-ink/55">Fundadora</p>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-blush-100">
-            <p class="font-display text-2xl font-semibold text-blush-600">Individual</p>
-            <p class="mt-1 text-xs text-ink/60">Atendimento individual e humanizado</p>
-          </div>
-          <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-blush-100">
-            <p class="font-display text-2xl font-semibold text-blush-600">Sob medida</p>
-            <p class="mt-1 text-xs text-ink/60">Protocolos pensados para cada cliente</p>
-          </div>
+      <!-- Foto da Cássia: original com só 136x150 px úteis -> 64 px (sem ampliar). PRECISA de foto nova da cliente (celular moderno, foto nativa). -->
+      <div class="absolute -bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap rounded-2xl bg-ivory py-2.5 pl-2.5 pr-6 shadow-xl shadow-cocoa-900/15 ring-1 ring-cocoa-900/5">
+        <picture class="flex-none">
+          <source type="image/webp" srcset="assets/img/fundadora-136.webp">
+          <img src="assets/img/fundadora-136.png" alt="Cássia Diaz, fundadora" width="64" height="64" loading="lazy" decoding="async"
+               class="h-16 w-16 rounded-full object-cover object-top ring-2 ring-gold-500">
+        </picture>
+        <div>
+          <p class="font-display text-2xl leading-none">Cássia Diaz</p>
+          <p class="mt-1 text-[11px] font-bold uppercase tracking-widest2 text-rose-600">Fundadora</p>
         </div>
       </div>
+    </div>
+
+    <div>
+      <p class="eyebrow reveal">Quem cuida de você</p>
+      <h2 class="reveal mt-4 text-[2.6rem] leading-[1.05] sm:text-6xl" style="--d:80ms">Um espaço pensado para <em class="text-rose-600">você</em>.</h2>
+      <p class="reveal mt-7 leading-relaxed text-cocoa-900/70" style="--d:140ms">
+        Aqui na Cássia Diaz Estética, eu uno a minha experiência com um atendimento verdadeiramente
+        humanizado para cuidar da autoestima das pessoas em Indaiatuba e região. Preparei meu espaço
+        para oferecer o máximo de conforto e tranquilidade, com foco total no seu bem-estar desde o
+        momento em que você passa pela porta.
+      </p>
+      <p class="reveal mt-4 leading-relaxed text-cocoa-900/70" style="--d:200ms">
+        Ofereço protocolos estéticos e terapêuticos pensados sob medida para a sua necessidade — desde
+        procedimentos faciais focados na vitalidade do rosto até os cuidados corporais mais essenciais.
+      </p>
+
+      <ul class="reveal mt-8 space-y-4" style="--d:240ms">
+        <li class="flex items-baseline gap-4 border-b border-rose-200 pb-4"><span class="w-9 flex-none font-display text-2xl text-gold-600">01</span><span class="font-semibold">Atendimento individual e humanizado</span></li>
+        <li class="flex items-baseline gap-4 border-b border-rose-200 pb-4"><span class="w-9 flex-none font-display text-2xl text-gold-600">02</span><span class="font-semibold">Protocolos sob medida — sem fórmula pronta</span></li>
+        <li class="flex items-baseline gap-4 border-b border-rose-200 pb-4"><span class="w-9 flex-none font-display text-2xl text-gold-600">03</span><span class="font-semibold">Ambiente preparado para o seu conforto</span></li>
+      </ul>
+
+      <!-- PENDENTE (confirmar com a Cássia antes de exibir): "Anos de experiência".
+           O site atual é inconsistente — diz "mais de 7 anos" no topo e "mais de 5 anos" no rodapé.
+           NÃO inventar número. Quando confirmado, adicionar um 3º item neste bloco (e trocar grid-cols-2 por grid-cols-3):
+           <div><p class="font-display text-6xl text-rose-600"><span class="js-count" data-target="ANOS">ANOS</span>+</p><p class="...">Anos de experiência</p></div>
+      -->
+      <div class="reveal mt-9 grid grid-cols-2 gap-6" style="--d:300ms">
+        <div>
+          <p class="font-display text-6xl leading-none text-rose-600 sm:text-7xl"><span class="js-count" data-target="5" data-decimal="1">5,0</span></p>
+          <p class="mt-2 text-[11px] font-bold uppercase tracking-widest2 text-cocoa-900/50">Nota no Google</p>
+        </div>
+        <div>
+          <p class="font-display text-6xl leading-none text-rose-600 sm:text-7xl"><span class="js-count" data-target="169">169</span></p>
+          <p class="mt-2 text-[11px] font-bold uppercase tracking-widest2 text-cocoa-900/50">Avaliações</p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
+         target="_blank" rel="noopener" class="btn btn-gold reveal mt-10" style="--d:340ms">
+        <svg class="h-4 w-4"><use href="#i-wa"/></svg> Agendar minha avaliação
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ================= DEPOIMENTOS ================= -->
-<section id="depoimentos" class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-  <div class="reveal mx-auto max-w-xl text-center">
-    <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blush-600">Depoimentos</span>
-    <h2 class="font-display mt-2 text-3xl font-semibold text-ink sm:text-4xl">O que dizem no Google</h2>
-    <p class="mt-3 text-ink/60">Avaliações reais, extraídas diretamente do perfil da Clínica Cássia Diaz no Google.</p>
-  </div>
-
-  <div class="reveal reveal-delay-1 relative mt-12 overflow-hidden">
-    <div id="testi-track" class="testi-track">
-
-      <div class="testi-slide px-2">
-        <figure class="h-full rounded-2xl bg-white p-7 shadow-sm ring-1 ring-blush-100">
-          <div class="flex text-gold-500"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <blockquote class="mt-4 text-ink/80">"A Cássia é uma excelente profissional, muito educada, gentil e atenciosa. Sempre saio dos atendimentos me sentindo mais leve, relaxada e bem cuidada. Além da qualidade das técnicas, a aromaterapia e a ambientação tornam a experiência ainda melhor."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blush-100 font-display text-lg font-semibold text-blush-600">A</div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Agatha</p>
-              <p class="text-xs text-ink/50">Local Guide · Google</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="testi-slide px-2">
-        <figure class="h-full rounded-2xl bg-white p-7 shadow-sm ring-1 ring-blush-100">
-          <div class="flex text-gold-500"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <blockquote class="mt-4 text-ink/80">"Passando para agradecer pelo atendimento impecável! A limpeza de pele na clínica é simplesmente top. Minha pele está renovada e super macia. O cuidado e o profissionalismo fazem toda a diferença. Nota 10!"</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blush-100 font-display text-lg font-semibold text-blush-600">B</div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Bruno</p>
-              <p class="text-xs text-ink/50">Local Guide · Google</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="testi-slide px-2">
-        <figure class="h-full rounded-2xl bg-white p-7 shadow-sm ring-1 ring-blush-100">
-          <div class="flex text-gold-500"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <blockquote class="mt-4 text-ink/80">"A Cássia é uma profissional maravilhosa, extremamente competente, gentil e muito atenciosa! Durante a minha gestação ela me ajudou muito com as drenagens, principalmente no final da gravidez, quando eu estava com bastante inchaço."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blush-100 font-display text-lg font-semibold text-blush-600">J</div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Jéssica</p>
-              <p class="text-xs text-ink/50">Local Guide · Google</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="testi-slide px-2">
-        <figure class="h-full rounded-2xl bg-white p-7 shadow-sm ring-1 ring-blush-100">
-          <div class="flex text-gold-500"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <blockquote class="mt-4 text-ink/80">"Profissional muito boa, com mão leve e produtos qualificados."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blush-100 font-display text-lg font-semibold text-blush-600">C</div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Cliente</p>
-              <p class="text-xs text-ink/50">Avaliação no Google</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="testi-slide px-2">
-        <figure class="h-full rounded-2xl bg-white p-7 shadow-sm ring-1 ring-blush-100">
-          <div class="flex text-gold-500"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-          <blockquote class="mt-4 text-ink/80">"Já na primeira sessão senti a diferença no meu corpo e no meu bem-estar. Acabei de chegar na cidade e não troco ela por ninguém."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blush-100 font-display text-lg font-semibold text-blush-600">C</div>
-            <div>
-              <p class="text-sm font-semibold text-ink">Cliente</p>
-              <p class="text-xs text-ink/50">Avaliação no Google</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-
+<section id="depoimentos" class="bg-cocoa-950 py-24 text-ivory md:py-32">
+  <div class="mx-auto max-w-4xl px-5 sm:px-8">
+    <div class="reveal text-center">
+      <p class="text-[11px] font-bold uppercase tracking-widest2 text-gold-400">Depoimentos</p>
+      <h2 class="mt-4 text-[2.6rem] leading-[1.05] sm:text-6xl">O que dizem <em class="text-gold-400">no Google</em></h2>
     </div>
 
-    <div class="mt-6 flex items-center justify-center gap-4">
-      <button id="testi-prev" aria-label="Depoimento anterior" class="flex h-10 w-10 items-center justify-center rounded-full border border-blush-200 text-ink/60 transition hover:bg-blush-100 hover:text-blush-700">
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      </button>
-      <div id="testi-dots" class="flex items-center gap-2"></div>
-      <button id="testi-next" aria-label="Próximo depoimento" class="flex h-10 w-10 items-center justify-center rounded-full border border-blush-200 text-ink/60 transition hover:bg-blush-100 hover:text-blush-700">
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
+    <div id="testi" class="reveal relative mt-14" style="--d:120ms">
+      <span class="pointer-events-none absolute -left-1 -top-10 select-none font-display text-[9rem] leading-none text-gold-500/25 sm:-top-14 sm:text-[12rem]" aria-hidden="true">“</span>
 
-  <div class="mt-10 flex items-center justify-center gap-2 text-ink/70">
-    <span class="flex text-gold-500"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></span>
-    <span class="font-semibold text-ink">5,0</span>
-    <span>· 169 avaliações no Google</span>
+      <div class="grid" aria-live="polite">
+        <figure class="testi-slide is-active">
+          <div class="flex text-gold-400"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <blockquote class="mt-6 font-display text-[1.65rem] leading-snug sm:text-4xl">A Cássia é uma excelente profissional, muito educada, gentil e atenciosa. Sempre saio dos atendimentos me sentindo mais leve, relaxada e bem cuidada. Além da qualidade das técnicas, a aromaterapia e a ambientação tornam a experiência ainda melhor.</blockquote>
+          <figcaption class="mt-8 flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/60 font-display text-xl text-gold-300">A</span><span><span class="block text-sm font-bold">Agatha</span><span class="block text-xs text-ivory/50">Local Guide · Google</span></span></figcaption>
+        </figure>
+
+        <figure class="testi-slide" aria-hidden="true">
+          <div class="flex text-gold-400"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <blockquote class="mt-6 font-display text-[1.65rem] leading-snug sm:text-4xl">Passando para agradecer pelo atendimento impecável! A limpeza de pele na clínica é simplesmente top. Minha pele está renovada e super macia. O cuidado e o profissionalismo fazem toda a diferença. Nota 10!</blockquote>
+          <figcaption class="mt-8 flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/60 font-display text-xl text-gold-300">B</span><span><span class="block text-sm font-bold">Bruno</span><span class="block text-xs text-ivory/50">Local Guide · Google</span></span></figcaption>
+        </figure>
+
+        <figure class="testi-slide" aria-hidden="true">
+          <div class="flex text-gold-400"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <blockquote class="mt-6 font-display text-[1.65rem] leading-snug sm:text-4xl">A Cássia é uma profissional maravilhosa, extremamente competente, gentil e muito atenciosa! Durante a minha gestação ela me ajudou muito com as drenagens, principalmente no final da gravidez, quando eu estava com bastante inchaço.</blockquote>
+          <figcaption class="mt-8 flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/60 font-display text-xl text-gold-300">J</span><span><span class="block text-sm font-bold">Jéssica</span><span class="block text-xs text-ivory/50">Local Guide · Google</span></span></figcaption>
+        </figure>
+
+        <figure class="testi-slide" aria-hidden="true">
+          <div class="flex text-gold-400"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <blockquote class="mt-6 font-display text-[1.65rem] leading-snug sm:text-4xl">Profissional muito boa, com mão leve e produtos qualificados.</blockquote>
+          <figcaption class="mt-8 flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/60 font-display text-xl text-gold-300">C</span><span><span class="block text-sm font-bold">Cliente</span><span class="block text-xs text-ivory/50">Avaliação no Google</span></span></figcaption>
+        </figure>
+
+        <figure class="testi-slide" aria-hidden="true">
+          <div class="flex text-gold-400"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+          <blockquote class="mt-6 font-display text-[1.65rem] leading-snug sm:text-4xl">Já na primeira sessão senti a diferença no meu corpo e no meu bem-estar. Acabei de chegar na cidade e não troco ela por ninguém.</blockquote>
+          <figcaption class="mt-8 flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/60 font-display text-xl text-gold-300">C</span><span><span class="block text-sm font-bold">Cliente</span><span class="block text-xs text-ivory/50">Avaliação no Google</span></span></figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-12 flex items-center gap-4">
+        <button id="testi-prev" type="button" aria-label="Depoimento anterior" class="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-ivory/25 text-ivory transition duration-300 hover:border-gold-400 hover:text-gold-300">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="flex flex-1 gap-2" role="tablist" aria-label="Depoimentos">
+          <button type="button" class="testi-bar is-active" aria-label="Depoimento 1"></button>
+          <button type="button" class="testi-bar" aria-label="Depoimento 2"></button>
+          <button type="button" class="testi-bar" aria-label="Depoimento 3"></button>
+          <button type="button" class="testi-bar" aria-label="Depoimento 4"></button>
+          <button type="button" class="testi-bar" aria-label="Depoimento 5"></button>
+        </div>
+        <button id="testi-next" type="button" aria-label="Próximo depoimento" class="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-ivory/25 text-ivory transition duration-300 hover:border-gold-400 hover:text-gold-300">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="reveal mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-ivory/70" style="--d:120ms">
+      <span class="flex text-gold-400"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></span>
+      <span><strong class="text-ivory"><span class="js-count" data-target="5" data-decimal="1">5,0</span></strong> · <strong class="text-ivory"><span class="js-count" data-target="169">169</span></strong> avaliações no Google</span>
+    </p>
   </div>
 </section>
 
 <!-- ================= LOCALIZAÇÃO ================= -->
-<section id="localizacao" class="bg-ink py-20 text-white">
-  <div class="mx-auto max-w-6xl px-5 sm:px-8">
-    <div class="reveal mx-auto max-w-xl text-center">
-      <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blush-300">Localização</span>
-      <h2 class="font-display mt-2 text-3xl font-semibold sm:text-4xl">Venha nos visitar</h2>
+<section id="localizacao" class="mx-auto max-w-6xl px-5 py-24 sm:px-8 md:py-32">
+  <div class="grid items-center gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-16">
+    <div>
+      <p class="eyebrow reveal">Localização</p>
+      <h2 class="reveal mt-4 text-[2.6rem] leading-[1.05] sm:text-6xl" style="--d:80ms">Venha nos <em class="text-rose-600">visitar</em>.</h2>
+
+      <div class="mt-10 space-y-6">
+        <div class="reveal flex gap-4" style="--d:120ms">
+          <span class="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-rose-100 text-rose-600"><svg class="h-6 w-6"><use href="#i-pin"/></svg></span>
+          <div><p class="font-bold">Endereço</p><p class="text-cocoa-900/65">Ed. Vértice - R. Pedro Gonçalves, 1400<br>Centro, Indaiatuba - SP, 13330-210</p></div>
+        </div>
+        <div class="reveal flex gap-4" style="--d:180ms">
+          <span class="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-rose-100 text-rose-600"><svg class="h-6 w-6"><use href="#i-clock"/></svg></span>
+          <div>
+            <p class="font-bold">Horário</p>
+            <!-- PENDENTE: dias e horário exatos a confirmar com a proprietária (o Google Maps só mostra "abre às 07:00") -->
+            <p class="text-cocoa-900/65">Atendimento com hora marcada.<br>Agende seu horário pelo WhatsApp.</p>
+          </div>
+        </div>
+        <div class="reveal flex gap-4" style="--d:240ms">
+          <span class="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-rose-100 text-rose-600"><svg class="h-6 w-6"><use href="#i-phone"/></svg></span>
+          <div><p class="font-bold">Telefone / WhatsApp</p><p class="text-cocoa-900/65">(19) 99523-9638</p></div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
+         target="_blank" rel="noopener" class="btn btn-gold reveal mt-10" style="--d:300ms">
+        <svg class="h-4 w-4"><use href="#i-wa"/></svg> Agendar meu horário
+      </a>
     </div>
 
-    <div class="reveal reveal-delay-1 mt-12 grid grid-cols-1 gap-8 overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10 lg:grid-cols-2">
-      <div class="min-h-[320px] w-full">
-        <iframe
-          class="h-full min-h-[320px] w-full grayscale-[15%]"
-          src="https://www.google.com/maps?q=Ed.+Vertice+-+R.+Pedro+Gon%C3%A7alves%2C+1400+-+Centro%2C+Indaiatuba+-+SP%2C+13330-210&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mapa - Clínica Estética Cássia Diaz">
-        </iframe>
-      </div>
-
-      <div class="flex flex-col justify-center gap-6 p-8 sm:p-10">
-        <div class="flex gap-4">
-          <div class="mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full bg-blush-500/20 text-blush-300">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-          </div>
-          <div>
-            <p class="font-semibold">Endereço</p>
-            <p class="text-white/70">Ed. Vértice - R. Pedro Gonçalves, 1400<br>Centro, Indaiatuba - SP, 13330-210</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full bg-blush-500/20 text-blush-300">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <p class="font-semibold">Horário</p>
-            <!-- Horário exato (dias e fechamento) a confirmar com a proprietária; Google Maps mostra apenas "abre às 07:00" -->
-            <p class="text-white/70">Atendimento com hora marcada.<br>Agende seu horário pelo WhatsApp.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full bg-blush-500/20 text-blush-300">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38 12.035 12.035 0 01-7.143-7.143 1.125 1.125 0 01.38-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-          </div>
-          <div>
-            <p class="font-semibold">Telefone / WhatsApp</p>
-            <p class="text-white/70">(19) 99523-9638</p>
-          </div>
-        </div>
-
-        <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
-           target="_blank" rel="noopener"
-           class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:brightness-95">
-          Agendar meu horário
-        </a>
-      </div>
+    <div class="reveal overflow-hidden rounded-[32px] shadow-2xl shadow-cocoa-900/15 ring-1 ring-cocoa-900/5" style="--d:120ms">
+      <iframe class="block h-[420px] w-full lg:h-[500px]" style="filter:saturate(.75) sepia(.12) contrast(1.02)"
+        src="https://www.google.com/maps?q=Ed.+Vertice+-+R.+Pedro+Gon%C3%A7alves%2C+1400+-+Centro%2C+Indaiatuba+-+SP%2C+13330-210&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa - Clínica Estética Cássia Diaz"></iframe>
     </div>
   </div>
 </section>
 
 <!-- ================= CTA FINAL ================= -->
-<section class="bg-gradient-to-b from-blush-50 to-white py-20 text-center">
-  <div class="reveal mx-auto max-w-2xl px-5 sm:px-8">
-    <h2 class="font-display text-3xl font-semibold text-ink sm:text-4xl">Pronta para cuidar de você?</h2>
-    <p class="mt-4 text-ink/70">Fale agora com a Cássia pelo WhatsApp e agende sua avaliação em Indaiatuba.</p>
+<section class="bg-ivory-2 px-5 py-20 sm:px-8 md:py-28">
+  <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-[40px] bg-cocoa-900 px-8 py-16 text-center text-ivory sm:px-16 md:py-20">
+    <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-gold-500/30" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -bottom-32 -left-16 h-80 w-80 rounded-full border border-gold-500/20" aria-hidden="true"></div>
+    <p class="relative text-[11px] font-bold uppercase tracking-widest2 text-gold-400">Agende sua avaliação</p>
+    <h2 class="relative mx-auto mt-5 max-w-2xl text-[2.6rem] leading-[1.05] sm:text-6xl">Pronta para <em class="text-gold-400">cuidar de você</em>?</h2>
+    <p class="relative mx-auto mt-5 max-w-md text-ivory/70">Fale agora com a Cássia pelo WhatsApp e escolha o melhor horário para o seu atendimento em Indaiatuba.</p>
     <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
-       target="_blank" rel="noopener"
-       class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-9 py-4 text-base font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:brightness-95">
-      Agendar no WhatsApp
+       target="_blank" rel="noopener" class="btn btn-gold relative mt-9 !px-9 !py-4 !text-[15px]">
+      <svg class="h-5 w-5"><use href="#i-wa"/></svg> Agendar no WhatsApp
     </a>
   </div>
 </section>
+</main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-blush-900 py-12 text-blush-100">
+<footer class="bg-cocoa-950 py-14 text-ivory/70">
   <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 text-center sm:px-8">
-    <span class="font-display text-2xl font-semibold text-white">Cássia Diaz Estética</span>
-    <p class="max-w-sm text-sm text-blush-200/80">Clínica de estética em Indaiatuba · Ed. Vértice - R. Pedro Gonçalves, 1400 - Centro</p>
-
-    <div class="flex items-center gap-4">
-      <a href="https://wa.me/5519995239638" target="_blank" rel="noopener"
-         class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20" aria-label="WhatsApp">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.98.578 3.822 1.573 5.373L2 22l4.735-1.545A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.001a8.964 8.964 0 01-4.573-1.246l-.328-.195-2.812.918.925-2.737-.213-.34A8.965 8.965 0 013 12c0-4.963 4.038-9 9.001-9C16.963 3 21 7.037 21 12s-4.037 9.001-8.999 9.001z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/limpezadepele.cassiadiaz/" target="_blank" rel="noopener"
-         class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20" aria-label="Instagram">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100093107143893" target="_blank" rel="noopener"
-         class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20" aria-label="Facebook">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94z"/></svg>
-      </a>
-      <a href="tel:+5519995239638"
-         class="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20" aria-label="Ligar">
-        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38 12.035 12.035 0 01-7.143-7.143 1.125 1.125 0 01.38-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-      </a>
+    <span class="font-display text-3xl text-ivory">Cássia Diaz <em class="text-gold-400">Estética</em></span>
+    <p class="max-w-sm text-sm">Clínica de estética em Indaiatuba<br>Ed. Vértice - R. Pedro Gonçalves, 1400 - Centro</p>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/5519995239638" target="_blank" rel="noopener" aria-label="WhatsApp" class="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/20 transition duration-300 hover:border-gold-400 hover:text-gold-300"><svg class="h-5 w-5"><use href="#i-wa"/></svg></a>
+      <a href="https://www.instagram.com/limpezadepele.cassiadiaz/" target="_blank" rel="noopener" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/20 transition duration-300 hover:border-gold-400 hover:text-gold-300"><svg class="h-5 w-5"><use href="#i-ig"/></svg></a>
+      <a href="https://www.facebook.com/profile.php?id=100093107143893" target="_blank" rel="noopener" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/20 transition duration-300 hover:border-gold-400 hover:text-gold-300"><svg class="h-5 w-5"><use href="#i-fb"/></svg></a>
+      <a href="tel:+5519995239638" aria-label="Ligar" class="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/20 transition duration-300 hover:border-gold-400 hover:text-gold-300"><svg class="h-5 w-5"><use href="#i-phone"/></svg></a>
     </div>
-
-    <p class="text-xs text-blush-200/50">cassiadiazsilva@gmail.com</p>
-    <p class="text-xs text-blush-200/50">© <span id="year"></span> Cássia Diaz Estética. Todos os direitos reservados.</p>
+    <p class="text-xs text-ivory/40">cassiadiazsilva@gmail.com</p>
+    <p class="text-xs text-ivory/40">© <span id="year">2026</span> Cássia Diaz Estética. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<!-- ================= BOTÃO WHATSAPP FIXO ================= -->
+<!-- ================= BOTÃO WHATSAPP FIXO (verde oficial: reconhecimento imediato) ================= -->
 <a href="https://wa.me/5519995239638?text=Ol%C3%A1%2C%20Cassia!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%E2%9C%A8"
    target="_blank" rel="noopener" aria-label="Agendar no WhatsApp"
-   class="whatsapp-pulse fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition hover:scale-105 sm:h-16 sm:w-16">
-  <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.98.578 3.822 1.573 5.373L2 22l4.735-1.545A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.001a8.964 8.964 0 01-4.573-1.246l-.328-.195-2.812.918.925-2.737-.213-.34A8.965 8.965 0 013 12c0-4.963 4.038-9 9.001-9C16.963 3 21 7.037 21 12s-4.037 9.001-8.999 9.001z"/></svg>
+   class="whatsapp-pulse fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition duration-300 hover:scale-105 sm:h-16 sm:w-16">
+  <svg class="h-7 w-7"><use href="#i-wa"/></svg>
 </a>
 
 <!-- ================= SCHEMA.ORG (BeautySalon / LocalBusiness) ================= -->
@@ -676,34 +538,22 @@
     "postalCode": "13330-210",
     "addressCountry": "BR"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -23.0839279,
-    "longitude": -47.2156947
-  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -23.0839279, "longitude": -47.2156947 },
   "sameAs": [
     "https://www.instagram.com/limpezadepele.cassiadiaz/",
     "https://www.facebook.com/profile.php?id=100093107143893"
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "169"
-  }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "169" }
 }
 </script>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Header shrink on scroll */
+  /* Header: transparente sobre o hero -> fundo sólido, sombra e altura reduzida ao rolar */
   const header = document.getElementById('site-header');
-  const onScroll = () => {
-    if (window.scrollY > 24) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  };
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -715,10 +565,8 @@
   } else {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     revealEls.forEach(el => io.observe(el));
-    // rede de segurança: se por qualquer motivo o observer não disparar, revela tudo após 5s
-    setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 5000);
   }
 
   /* Contadores animados (nota do Google e nº de avaliações).
@@ -738,18 +586,22 @@
     el.dataset.running = '1';
     const target = parseFloat(el.dataset.target);
     const decimals = parseInt(el.dataset.decimal || '0', 10);
+    const delay = parseInt(el.dataset.delay || '0', 10);
     const duration = 1400;
-    const safety = setTimeout(() => setFinal(el), duration + 250);
-    const start = performance.now();
-    el.textContent = fmt(0, decimals);
-    const step = (now) => {
+    const safety = setTimeout(() => setFinal(el), delay + duration + 250);
+    setTimeout(() => {
       if (el.dataset.done) return;
-      const progress = Math.min((now - start) / duration, 1);
-      el.textContent = fmt(target * (1 - Math.pow(1 - progress, 3)), decimals);
-      if (progress < 1) requestAnimationFrame(step);
-      else { clearTimeout(safety); setFinal(el); }
-    };
-    requestAnimationFrame(step);
+      const start = performance.now();
+      el.textContent = fmt(0, decimals);
+      const step = (now) => {
+        if (el.dataset.done) return;
+        const progress = Math.min((now - start) / duration, 1);
+        el.textContent = fmt(target * (1 - Math.pow(1 - progress, 3)), decimals);
+        if (progress < 1) requestAnimationFrame(step);
+        else { clearTimeout(safety); setFinal(el); }
+      };
+      requestAnimationFrame(step);
+    }, delay);
   };
 
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {
@@ -763,60 +615,36 @@
     counters.forEach(el => counterIo.observe(el));
   }
 
-  /* Testimonial slider */
-  const track = document.getElementById('testi-track');
-  const slides = track.children.length;
-  const dotsWrap = document.getElementById('testi-dots');
-  let perView = window.innerWidth >= 768 ? 2 : 1;
-  let index = 0;
-
-  const maxIndex = () => Math.max(0, slides - perView);
-
-  const buildDots = () => {
-    dotsWrap.innerHTML = '';
-    for (let i = 0; i <= maxIndex(); i++) {
-      const dot = document.createElement('button');
-      dot.className = 'h-2 w-2 rounded-full bg-blush-200 transition';
-      dot.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
-      dot.addEventListener('click', () => { index = i; update(); });
-      dotsWrap.appendChild(dot);
-    }
-  };
-
-  const update = () => {
-    const pct = (100 / slides) * index;
-    track.style.transform = `translateX(-${pct}%)`;
-    Array.from(dotsWrap.children).forEach((d, i) => {
-      d.classList.toggle('bg-blush-600', i === index);
-      d.classList.toggle('bg-blush-200', i !== index);
+  /* Depoimentos: troca automática com barra de progresso (a própria animação CSS da barra
+     dispara o próximo slide). Pausa ao passar o mouse; sem movimento reduzido não roda sozinho. */
+  const slides = Array.from(document.querySelectorAll('.testi-slide'));
+  const bars = Array.from(document.querySelectorAll('.testi-bar'));
+  let cur = 0;
+  const show = (i) => {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach((s, k) => { s.classList.toggle('is-active', k === cur); s.setAttribute('aria-hidden', String(k !== cur)); });
+    bars.forEach((b, k) => {
+      b.classList.remove('is-active', 'is-done');
+      if (k < cur) b.classList.add('is-done');
+      if (k === cur) { void b.offsetWidth; b.classList.add('is-active'); }
     });
   };
-
-  document.getElementById('testi-prev').addEventListener('click', () => {
-    index = index <= 0 ? maxIndex() : index - 1;
-    update();
+  bars.forEach((b, k) => {
+    b.addEventListener('click', () => show(k));
+    b.addEventListener('animationend', () => { if (b.classList.contains('is-active')) show(cur + 1); });
   });
-  document.getElementById('testi-next').addEventListener('click', () => {
-    index = index >= maxIndex() ? 0 : index + 1;
-    update();
-  });
-
-  window.addEventListener('resize', () => {
-    perView = window.innerWidth >= 768 ? 2 : 1;
-    index = Math.min(index, maxIndex());
-    buildDots();
-    update();
-  });
-
-  buildDots();
-  update();
-
-  if (!prefersReducedMotion) {
-    setInterval(() => {
-      index = index >= maxIndex() ? 0 : index + 1;
-      update();
-    }, 6000);
-  }
+  document.getElementById('testi-prev').addEventListener('click', () => show(cur - 1));
+  document.getElementById('testi-next').addEventListener('click', () => show(cur + 1));
+  let touchX = null;
+  const box = document.getElementById('testi');
+  box.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 45) show(cur + (dx < 0 ? 1 : -1));
+    touchX = null;
+  }, { passive: true });
+  show(0);
 </script>
 
 </body>
